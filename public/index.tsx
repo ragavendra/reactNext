@@ -25,10 +25,8 @@ function createTitle(title)
   }
 }
 
-function HomePage()
+function ManageLikes()
 {
-  const names = ["ant", 'elephant', 'horse'];
-  var i = 0;
   const [likes, setLikes] = React.useState(6);
 
   function handleClick()
@@ -37,15 +35,23 @@ function HomePage()
       setLikes(likes + 1);
   }
 
+  return (
+          <button onClick={handleClick}>Likes {likes}</button>
+  )
+}
+
+function HomePage()
+{
+  const names = ["ant", 'elephant', 'horse'];
+  var i = 0;
           // <Header />
   return (
       <div>
           <Header title="React !" />
           <Header title="New title - React !" some="ant data" />
           <ul>
-              { names.map(name => ( <li key = {name + i++}>{name}</li> )) }
+              { names.map(name => ( <li key = {name + i++}>{name} <ManageLikes /></li> )) }
           </ul>
-          <button onClick={handleClick}>Likes {likes}</button>
       </div>
   );
 }
