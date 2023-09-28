@@ -1,4 +1,6 @@
-const app = document.getElementById('app');
+import { useState } from "react";
+
+// const app = document.getElementById('app');
 
 function Header({ title, some })
 // function Header(props)
@@ -27,7 +29,7 @@ function createTitle(title)
 
 function ManageLikes()
 {
-  const [likes, setLikes] = React.useState(6);
+  const [likes, setLikes] = useState(6);
 
   function handleClick()
   {
@@ -40,7 +42,7 @@ function ManageLikes()
   )
 }
 
-function HomePage()
+export default function HomePage()
 {
   const names = ["ant", 'elephant', 'horse'];
   var i = 0;
@@ -56,4 +58,4 @@ function HomePage()
   );
 }
 
-ReactDOM.render(<HomePage />, app);
+// ReactDOM.render(<HomePage />, app);
